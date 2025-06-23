@@ -14,7 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "REEN Legal",
+  title: {
+    default: "REEN Legal",
+    template: "%s | REEN Legal",
+  },
   description: "Legal pages for REEN",
 };
 
