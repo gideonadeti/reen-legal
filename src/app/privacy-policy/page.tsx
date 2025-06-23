@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "Privacy Policy",
+};
+
 const Page = () => {
   return (
     <main className="max-w-3xl mx-auto p-8">
