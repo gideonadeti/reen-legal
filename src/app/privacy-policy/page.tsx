@@ -1,87 +1,162 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Privacy Policy",
 };
 
 const Page = () => {
+  const updatedDate = new Date("2025-07-08").toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <main className="max-w-3xl mx-auto p-8">
       <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
+      <p className="mb-4 text-muted-foreground">Last Updated: {updatedDate}</p>
 
       <section className="mb-6">
+        <h2 className="text-xl font-semibold mb-3">
+          1. Information Collection
+        </h2>
         <p>
-          When you sign up on REEN, we collect your name and email address via
-          Clerk. This information is used throughout the platform to identify
-          you in various areas.
+          We collect via{" "}
+          <Link
+            href="https://clerk.com"
+            className="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Clerk
+          </Link>
+          :
         </p>
-      </section>
-
-      <section className="mb-6">
-        <p>
-          Your name and role will appear in the list of users visible to
-          everyone on the platform. Anyone can click your entry to view your
-          profile, which includes your:
-        </p>
+        <ul className="list-disc list-inside mt-2">
+          <li>Full name</li>
+          <li>Email address</li>
+        </ul>
+        <p className="mt-2">Platform generates:</p>
         <ul className="list-disc list-inside">
-          <li>Name</li>
-          <li>Role (NADMIN or ADMIN)</li>
-          <li>Balance</li>
-          <li>Balance chart</li>
-          <li>Number of purchases</li>
-          <li>Amount spent</li>
-          <li>Amount gained (if ADMIN)</li>
-          <li>Number of products and a link to view them (if ADMIN)</li>
+          <li>Role (ADMIN/NADMIN)</li>
+          <li>Virtual balance & transaction history</li>
+          <li>Product data (for admins)</li>
         </ul>
       </section>
 
       <section className="mb-6">
-        <p>
-          When you purchase products, only the seller of those products will see
-          your name and the items you purchased from them. No other users will
-          see your orders. Sellers only see the buyer name—not the email or any
-          other private data.
-        </p>
+        <h2 className="text-xl font-semibold mb-3">2. Data Usage</h2>
+        <p>We use your information to:</p>
+        <ul className="list-disc list-inside mt-2 space-y-1">
+          <li>Enable platform functionality</li>
+          <li>Process virtual transactions</li>
+          <li>Display user profiles</li>
+          <li>Send order notifications</li>
+        </ul>
       </section>
 
       <section className="mb-6">
-        <p>
-          Once an order is created, it cannot be updated or deleted by you or
-          any other user. Even if a product related to the order is deleted by
-          its creator, a clone of that product will be stored with the order to
-          maintain consistency. However, the creator of the product will be
-          anonymized. Orders are only permanently deleted when the associated
-          user deletes their account.
-        </p>
+        <h2 className="text-xl font-semibold mb-3">3. Data Visibility</h2>
+        <div className="space-y-3">
+          <div>
+            <p className="font-medium">Publicly visible:</p>
+            <ul className="list-disc list-inside ml-4">
+              <li>Your name</li>
+              <li>Role badge</li>
+              <li>Balance</li>
+              <li>Public stats (purchases/sales counts)</li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-medium">During purchases:</p>
+            <ul className="list-disc list-inside ml-4">
+              <li>Sellers see your name and purchased items</li>
+              <li>
+                Sellers <span className="font-semibold">do not</span> see your
+                email
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section className="mb-6">
-        <p>
-          When you become an ADMIN, your products will be visible on the
-          platform. Your name will appear next to each product you create, and
-          users will be able to view other products by you from the product
-          page.
-        </p>
+        <h2 className="text-xl font-semibold mb-3">4. Third-Party Services</h2>
+        <div className="space-y-3">
+          <p>REEN integrates with:</p>
+          <ul className="list-disc list-inside space-y-2">
+            <li>
+              <span className="font-semibold">Clerk</span> (authentication) -
+              <Link
+                href="https://clerk.com/privacy"
+                className="underline ml-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <span className="font-semibold">Stripe</span> (test payments) -
+              <Link
+                href="https://stripe.com/privacy"
+                className="underline ml-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Privacy Policy
+              </Link>
+            </li>
+          </ul>
+          <p className="font-semibold">
+            No real payment data is collected or stored by REEN.
+          </p>
+        </div>
       </section>
 
       <section className="mb-6">
-        <p>When you delete your account:</p>
-        <ul className="list-disc list-inside">
-          <li>
-            You are removed from the user list and your profile is no longer
-            visible.
-          </li>
-          <li>
-            All cart items created by or related to your products are deleted.
-          </li>
-          <li>Products not tied to any orders are deleted entirely.</li>
-          <li>
-            Products tied to existing orders are anonymized and unlinked from
-            you.
-          </li>
+        <h2 className="text-xl font-semibold mb-3">
+          5. Data Retention & Deletion
+        </h2>
+        <div className="space-y-3">
+          <p>When you delete your account:</p>
+          <ul className="list-disc list-inside">
+            <li>Profile is immediately removed</li>
+            <li>Cart data is permanently deleted</li>
+            <li>Products without orders are deleted</li>
+            <li>Products with orders are anonymized</li>
+          </ul>
+          <p>Anonymized order data persists for platform integrity.</p>
+        </div>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-xl font-semibold mb-3">6. Security Measures</h2>
+        <p>We implement:</p>
+        <ul className="list-disc list-inside mt-2 space-y-1">
+          <li>Saga transaction pattern for rollbacks</li>
+          <li>Redis cache invalidation on data changes</li>
+          <li>Secure API endpoints</li>
+          <li>Stripe test-mode payment handling</li>
+        </ul>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-xl font-semibold mb-3">7. User Rights</h2>
+        <p>You can:</p>
+        <ul className="list-disc list-inside mt-2 space-y-1">
+          <li>Update profile via Clerk</li>
+          <li>Delete your account</li>
+          <li>Request data access via email</li>
         </ul>
       </section>
 
       <section>
-        <p>Email: gideonadeti0@gmail.com</p>
+        <h2 className="text-xl font-semibold mb-3">Contact</h2>
+        <p>
+          For privacy concerns:{" "}
+          <span className="font-mono">gideonadeti0@gmail.com</span>
+        </p>
       </section>
     </main>
   );
