@@ -148,8 +148,8 @@ const Page = () => {
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-3">9. Governing Law</h2>
         <p>
-          These Terms are governed by the laws of Nigeria. Any disputes shall be
-          resolved in Lagos courts.
+          These Terms are governed by the laws of The Better World. Any disputes
+          shall be resolved there.
         </p>
       </section>
 
