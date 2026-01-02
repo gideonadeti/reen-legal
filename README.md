@@ -2,6 +2,8 @@
 
 A Next.js application hosting the legal pages (Terms of Service and Privacy Policy) for the REEN e-commerce platform. These pages are deployed and integrated with Clerk authentication, requiring users to acknowledge that they have read and agreed to these terms during the sign-up process.
 
+> **Note:** This project is currently not deployed online as my AWS free tier has ended. However, everything works perfectly locally. You can follow the instructions in the [Running Locally](#running-locally) section to set up and run the project on your machine.
+
 ## Table of Contents
 
 - [REEN Legal](#reen-legal)
